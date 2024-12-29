@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "baseUrl": "./",
+        "outDir": "dist",
+        "sourceMap": true,
+        "noImplicitAny": true,
+
+        /* Bundler mode */
+        "allowImportingTsExtensions": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "react-jsx",
+    },
+    "include": [
+        "server/src", 
+        "client/src",
+    ],
+    "references": [{ "path": "./tsconfig.node.json" }]
+}

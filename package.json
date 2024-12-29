@@ -1,0 +1,55 @@
+{
+  "name": "hack-ideation",
+  "version": "1.0.0",
+  "description": "hack ideation site",
+  "main": "dist/server.js",
+  "scripts": {
+    "frontend": "vite",
+    "backend": "nodemon server/src/server.ts",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "build": "tsc -b && vite build",
+    "lint": "eslint . --ext .ts",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "nodemonConfig": {
+    "watch": [
+      "./**/*"
+    ]
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "dotenv": "^16.4.7",
+    "envalid": "^8.0.0",
+    "express": "^4.21.2",
+    "http-errors": "^2.0.0",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.2",
+    "morgan": "^1.10.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/express": "^5.0.0",
+    "@types/http-errors": "^2.0.4",
+    "@types/morgan": "^1.9.9",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react": "^7.37.3",
+    "globals": "^15.14.0",
+    "nodemon": "^3.1.9",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.2",
+    "vite": "^6.0.5"
+  }
+}
