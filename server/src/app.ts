@@ -6,6 +6,12 @@ import createHttpError, { isHttpError } from "http-errors";
 
 const app = express();
 
+// enable CORS for the frontend so it can call the backend
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+  });
+
 // shows endpoints being accessed
 app.use(morgan("dev"));
 // allows to access/send json bodies
