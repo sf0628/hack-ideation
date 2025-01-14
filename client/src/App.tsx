@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import { Note as NoteModel} from './models/notes';
+import { Game as GameModel} from './models/game';
 import Note from './components/Note';
 
 function App() {
   const [count, setCount] = useState(0);
-  const [notes, setNotes] = useState<NoteModel[]>([]); // array of notes
+  const [notes, setNotes] = useState<GameModel[]>([]); // array of notes
 
   useEffect(() => {
     async function loadNotes() {

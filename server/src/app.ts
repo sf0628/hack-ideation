@@ -1,6 +1,6 @@
 import "dotenv/config";
 import express, { NextFunction, Request, Response } from "express";
-import notesRoutes from "./routes/notes";
+import gamesRoutes from "./routes/games";
 import morgan from "morgan";
 import createHttpError, { isHttpError } from "http-errors";
 
@@ -17,9 +17,9 @@ app.use(morgan("dev"));
 // allows to access/send json bodies
 app.use(express.json());
 
-app.use("/api/notes", notesRoutes);
+app.use("/api/games", gamesRoutes);
 
-// middleware
+// middleware for errors
 app.use((req, res, next) => {
     next(createHttpError(404, "Endpoint not found.")); // http-errors: allows for better status codes
 });
