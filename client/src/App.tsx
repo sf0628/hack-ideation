@@ -2,33 +2,32 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { Game as GameModel} from './models/game';
-import Note from './components/Note';
+import * as GamesApi from "./network/games_api";
+import Header from './components/Header';
+import WelcomePage from './pages/WelcomePage';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
   const [count, setCount] = useState(0);
-  const [notes, setNotes] = useState<GameModel[]>([]); // array of notes
+  const [games, setGames] = useState<GameModel[]>([]); // array of notes
 
   useEffect(() => {
-    async function loadNotes() {
+    async function loadGames() {
       try {
-        const response = await fetch ("http://localhost:5001/api/notes", {method: "GET"});
-        const notes = await response.json(); // because of the endpoint sending json
-        setNotes(notes);
+        const games = await GamesApi.fetchGames();
+        setGames(games);
       } catch (error) {
         console.error(error);
         alert(error);
       }
     }
-    loadNotes();
+    loadGames();
   }, []); // empty array, executes on first render, no array, execute on every render
 
   return (
-    <div className="App">
-      {notes.map(note => (
-        <Note note={note} key={note._id} />
-      ))}
+    <div className="h-screen bg-slate-800">
     </div>
   );
 }
 
-export default App
+export default App;
