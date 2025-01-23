@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import { Game as GameModel} from './models/game';
 import * as GamesApi from "./network/games_api";
 import Header from './components/Header';
@@ -25,7 +23,10 @@ function App() {
   }, []); // empty array, executes on first render, no array, execute on every render
 
   return (
-    <div className="h-screen bg-slate-800">
+    <div className="">
+      <WelcomePage />
+      
+      <p>meow</p>
     </div>
   );
 }

@@ -1,20 +1,18 @@
 interface HeaderProps {
     onClickHome: () =>  void;
     onClickGames: () => void;
-    onClickCreateGame: () => void;
+    onClickStats: () => void;
 }
 
-function Header({onClickHome, onClickGames, onClickCreateGame}: HeaderProps) {
+function Header({onClickHome, onClickGames, onClickStats}: HeaderProps) {
     return (
-        <header className="">
-            <nav >
-                <ul className="flex flex-row justify-between">
-                    <li><button type="button" className="menu-button text" onClick={onClickHome}>CoSMO X HackBeanpot</button></li>
-                    <li><button type="button" className="menu-button" onClick={onClickGames}>Browse</button></li>
-                    <li><button type="button" className="menu-button" onClick={onClickCreateGame}>Create</button></li>
-                </ul>
-            </nav>
-        </header>
+        <nav >
+            <ul className="flex flex-row justify-evenly">
+                <li><button type="button" className="menu-button text-black" onClick={onClickHome}>CoSMO X HackBeanpot</button></li>
+                <li><button type="button" className="menu-button text-black" onClick={onClickGames}>Browse</button></li>
+                <li><button type="button" className="menu-button text-black" onClick={onClickStats}>History</button></li>
+            </ul>
+        </nav>
     )
 }
 

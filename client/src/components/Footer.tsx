@@ -3,8 +3,10 @@ interface FooterProps {
 
 function Footer({ }: FooterProps) {
     return (
-        <p>footer</p>
+        <div className="bottom-0">
+            <p>footer</p>
+        </div>
     )
-}
+};
 
 export default Footer;

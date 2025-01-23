@@ -5,7 +5,7 @@ interface WelcomePageProps {
 function WelcomePage({}: WelcomePageProps) {
     return (
        <div className="">
-        <p className="">meow</p>
+        <p className="">this is the welcome page</p>
        </div>
     )
 }

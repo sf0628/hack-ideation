@@ -7,31 +7,31 @@ import App from './App.tsx'
 import Header from './components/Header.tsx';
 import Footer from './components/Footer.tsx';
 
-const navigate = useNavigate();
-
-const handleOnClickHome = () => {
-  navigate('/');
-};
-
-const handleOnClickGames = () => {
-  navigate("/explore");
-};
-
-const handleOnClickCreateGame = () => {
-  navigate("/profile");
-};
-
-const handleOnClickStats = () => {
-  navigate("/stats");
-}
-
 function Layout() {
+  const navigate = useNavigate();
+  
+  const handleOnClickHome = () => {
+    navigate('/');
+  };
+
+  const handleOnClickGames = () => {
+    navigate("/explore");
+  };
+
+  const handleOnClickStats = () => {
+    navigate("/stats");
+  }
+
   return (
-    <>
-      <Header onClickHome={handleOnClickHome} onClickGames={handleOnClickGames} onClickCreateGame={handleOnClickCreateGame}/>
-      <Outlet /> 
+    <div className="flex h-screen">
+      <header className="fixed top-0 left-0 right-0 w-full z-10 bg-gray-500">
+        <Header onClickHome={handleOnClickHome} onClickGames={handleOnClickGames} onClickStats={handleOnClickStats}/>
+      </header>
+      <main className="flex-grow pt-16 overflow-hidden">
+        <Outlet /> 
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
@@ -63,6 +63,6 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router}/>
   </StrictMode>,
 )
